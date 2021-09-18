@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class DeliveryProfilePage extends StatefulWidget {
-  DeliveryProfilePage({Key key, this.title}) : super(key: key);
+  DeliveryProfilePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 
@@ -75,78 +75,43 @@ class _DeliveryProfilePageState extends State<DeliveryProfilePage> {
                 color: Colors.white, fontWeight: FontWeight.bold)),
       ),
     );
-    final List<String> orderid = <String>[
-      '#001',
-      '#001',
-      '#001',
-      '#001',
-      '#001',
-      '#001',
-      '#001',
-      '#001'
-    ];
-    final List<String> date = <String>[
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021',
-      '20/10/2021'
-    ];
-    final List<int> cost = <int>[2, 0, 10, 6, 52, 4, 0, 2];
+
     return Scaffold(
         body: SingleChildScrollView(
       child: Center(
         child: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              SizedBox(height: 45.0),
-              nameField,
-              SizedBox(height: 25.0),
-              bankdetailsField,
-              SizedBox(
-                height: 35.0,
-              ),
-              regionField,
-              SizedBox(
-                height: 35.0,
-              ),
-              proofofaddressField,
-              SizedBox(
-                height: 35.0,
-              ),
-              mobileField,
-              SizedBox(
-                height: 35.0,
-              ),
-              ListView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                itemCount: orderid.length,
-                itemBuilder: (context, index) {
-                  return ListTile(
-                      hoverColor: Colors.blue,
-                      onTap: () {
-                        print("Clicked");
-                      },
-                      leading: Icon(Icons.add_box),
-                      trailing: Text(
-                        "${date[index]}",
-                        style: TextStyle(color: Colors.green, fontSize: 15),
-                      ),
-                      title: Text(
-                          " Order Id: ${orderid[index]} Cost: ${cost[index]}"));
-                },
-              ),
-              nextpageButon,
-              SizedBox(
-                height: 15.0,
-              ),
-            ],
+          color: Colors.white,
+          child: Padding(
+            padding: const EdgeInsets.all(36.0),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SizedBox(height: 45.0),
+                nameField,
+                SizedBox(height: 25.0),
+                bankdetailsField,
+                SizedBox(
+                  height: 35.0,
+                ),
+                regionField,
+                SizedBox(
+                  height: 35.0,
+                ),
+                proofofaddressField,
+                SizedBox(
+                  height: 35.0,
+                ),
+                mobileField,
+                SizedBox(
+                  height: 35.0,
+                ),
+                nextpageButon,
+                SizedBox(
+                  height: 15.0,
+                ),
+              ],
+            ),
           ),
         ),
       ),
