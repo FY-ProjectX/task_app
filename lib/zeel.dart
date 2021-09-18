@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
-
-class MyApp extends StatefulWidget {
+class OrderPage extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  _OrderPageState createState() => _OrderPageState();
 }
 
-class _MyAppState extends State<MyApp> {
-  String valuechoose;
+class _OrderPageState extends State<OrderPage> {
+  String? valuechoose;
 
   List listItem = [
     "Documents",
@@ -166,7 +164,7 @@ class _MyAppState extends State<MyApp> {
     );
   }
 
-  bool checkboxvalue = false;
+  bool? checkboxvalue = false;
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -221,7 +219,7 @@ class _MyAppState extends State<MyApp> {
                   value: valuechoose,
                   onChanged: (value) {
                     setState(() {
-                      valuechoose = value;
+                      valuechoose = value.toString();
                       print(value);
                     });
                   },
@@ -246,7 +244,7 @@ class _MyAppState extends State<MyApp> {
                   children: [
                     Checkbox(
                       value: this.checkboxvalue,
-                      onChanged: (bool value) {
+                      onChanged: (bool? value) {
                         print(value);
                         setState(() {
                           checkboxvalue = value;
