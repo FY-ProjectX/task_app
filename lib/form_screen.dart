@@ -22,14 +22,14 @@ class FormScreenState extends State<FormScreen> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
       maxLength: 20,
-      validator: (String ?value) {
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Name is Required';
         }
 
         return null;
       },
-      onSaved: (String ?value) {
+      onSaved: (String value) {
         _name = value;
       },
     );
@@ -41,20 +41,20 @@ class FormScreenState extends State<FormScreen> {
           labelText: 'Email',
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
-      validator: (String ?value) {
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Email is Required';
         }
 
         if (!RegExp(
                 r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-            .hasMatch(?value)) {
+            .hasMatch(value)) {
           return 'Please enter a valid email Address';
         }
 
         return null;
       },
-      onSaved: (String ?value) {
+      onSaved: (String value) {
         _email = value;
       },
     );
@@ -67,14 +67,14 @@ class FormScreenState extends State<FormScreen> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
       ),
       keyboardType: TextInputType.visiblePassword,
-      validator: (String ?value) {
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Password is Required';
         }
 
         return null;
       },
-      onSaved: (String ?value) {
+      onSaved: (String value) {
         _password = value;
       },
     );
@@ -87,7 +87,7 @@ class FormScreenState extends State<FormScreen> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
       keyboardType: TextInputType.phone,
-      validator: (String ?value) {
+      validator: (String value) {
         if (value.isEmpty) {
           return 'Phone number is Required';
         }
