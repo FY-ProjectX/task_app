@@ -8,6 +8,10 @@ import 'pages/LoginPage.dart';
 import 'pages/AddOrderPage.dart';
 import 'pages/RegisterPage.dart';
 
+void main() {
+  runApp(MyApp());
+}
+
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
   @override

@@ -13,7 +13,7 @@ class _LoginPageState extends State<LoginPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   // TextEditingController confirmpassword = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  final _loginformKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
         body: SingleChildScrollView(
           child: Container(
             child: Form(
-              key: _formKey,
+              key: _loginformKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -134,7 +134,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState!.validate()) {
+                          if (_loginformKey.currentState!.validate()) {
                             // String userEmail = email.text;
                             // String userPassword = password.text;
                             Get.offNamed('/customerdashboard');

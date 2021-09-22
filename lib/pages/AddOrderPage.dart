@@ -167,96 +167,92 @@ class _AddOrderPageState extends State<AddOrderPage> {
   bool? checkboxvalue = false;
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.dark,
-      title: 'order',
-      home: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: Text('Order Page'),
-          ),
-          body: ListView(
-            padding: EdgeInsets.all(8),
-            children: [
-              ListTile(
-                title: Text('A)  FROM'),
+    return Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text('Order Page'),
+        ),
+        body: ListView(
+          padding: EdgeInsets.all(8),
+          children: [
+            ListTile(
+              title: Text('A)  FROM'),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+              child: _buildaddress(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _buildphone(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _buildtype(),
+            ),
+            ListTile(
+              title: Text('B)  TO'),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _toaddress(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _tophone(),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: _totype(),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
+              child: _weight(),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 52, 0, 0),
+              child: DropdownButton(
+                value: valuechoose,
+                onChanged: (value) {
+                  setState(() {
+                    valuechoose = value.toString();
+                    print(value);
+                  });
+                },
+                items: listItem.map((valueItem) {
+                  return DropdownMenuItem(
+                    value: valueItem,
+                    child: Text(valueItem),
+                  );
+                }).toList(),
+                hint: Text(
+                  "Type of package",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600),
+                ),
               ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: _buildaddress(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildphone(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _buildtype(),
-              ),
-              ListTile(
-                title: Text('B)  TO'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _toaddress(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _tophone(),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _totype(),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                child: _weight(),
-              ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 52, 0, 0),
-                child: DropdownButton(
-                  value: valuechoose,
-                  onChanged: (value) {
-                    setState(() {
-                      valuechoose = value.toString();
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(0, 53, 0, 0),
+              child: Row(
+                children: [
+                  Checkbox(
+                    value: this.checkboxvalue,
+                    onChanged: (bool? value) {
                       print(value);
-                    });
-                  },
-                  items: listItem.map((valueItem) {
-                    return DropdownMenuItem(
-                      value: valueItem,
-                      child: Text(valueItem),
-                    );
-                  }).toList(),
-                  hint: Text(
-                    "Type of package",
-                    style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600),
+                      setState(() {
+                        checkboxvalue = value;
+                      });
+                    },
                   ),
-                ),
+                  Text("I accept the terms and condition")
+                ],
               ),
-              Padding(
-                padding: const EdgeInsets.fromLTRB(0, 53, 0, 0),
-                child: Row(
-                  children: [
-                    Checkbox(
-                      value: this.checkboxvalue,
-                      onChanged: (bool? value) {
-                        print(value);
-                        setState(() {
-                          checkboxvalue = value;
-                        });
-                      },
-                    ),
-                    Text("I accept the terms and condition")
-                  ],
-                ),
-              )
-            ],
-          )),
-    );
+            )
+          ],
+        ));
   }
 }

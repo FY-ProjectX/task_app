@@ -13,6 +13,16 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
 
   @override
   Widget build(BuildContext context) {
+    return Scaffold(
+        drawer: appdrawer(),
+        appBar: AppBar(
+          backgroundColor: Colors.black,
+          title: Text("Dashboard"),
+        ),
+        body: new ListViewBuilder());
+  }
+
+  Widget appdrawer() {
     return Drawer(
       child: Material(
         color: Colors.black,
@@ -24,9 +34,7 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
                 text: 'Home', icon: Icons.home, next: '/customerdashboard'),
             const SizedBox(height: 20),
             buildMenuItem(
-                text: 'Profile',
-                icon: Icons.people,
-                next: '/cusomterprofilepage'),
+                text: 'Profile', icon: Icons.people, next: '/customerprofile'),
             const SizedBox(height: 20),
             buildMenuItem(
                 text: 'Trip History',
@@ -51,9 +59,7 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
                 text: 'Help', icon: Icons.help, next: '/customerdashboard'),
             const SizedBox(height: 48),
             buildMenuItem(
-                text: 'Logout',
-                icon: Icons.logout_outlined,
-                next: '/customerdashboard'),
+                text: 'Logout', icon: Icons.logout_outlined, next: '/'),
           ],
         ),
       ),
@@ -73,7 +79,11 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
       title: Text(text, style: TextStyle(color: color)),
       hoverColor: hoverColor,
       onTap: () {
-        Get.toNamed(next);
+        if (next == '/') {
+          Get.offAllNamed(next);
+        } else {
+          Get.toNamed(next);
+        }
       },
     );
   }

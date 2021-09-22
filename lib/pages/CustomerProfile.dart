@@ -13,7 +13,7 @@ class CustomerProfileState extends State<CustomerProfile> {
   String? _password;
   String? _phoneNumber;
 
-  final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+  final GlobalKey<FormState> _profileformKey = GlobalKey<FormState>();
 
   Widget _buildName() {
     return TextFormField(
@@ -98,6 +98,11 @@ class CustomerProfileState extends State<CustomerProfile> {
   }
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -107,7 +112,7 @@ class CustomerProfileState extends State<CustomerProfile> {
         child: Container(
           margin: EdgeInsets.all(24),
           child: Form(
-            key: _formKey,
+            key: _profileformKey,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
@@ -143,11 +148,11 @@ class CustomerProfileState extends State<CustomerProfile> {
                       textStyle:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
-                    if (!_formKey.currentState!.validate()) {
+                    if (!_profileformKey.currentState!.validate()) {
                       return;
                     }
 
-                    _formKey.currentState!.save();
+                    _profileformKey.currentState!.save();
 
                     print(_name);
                     print(_email);

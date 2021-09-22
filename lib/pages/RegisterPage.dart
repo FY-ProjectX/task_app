@@ -14,7 +14,7 @@ class _RegisterPageState extends State<RegisterPage> {
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   // TextEditingController confirmpassword = TextEditingController();
-  final _formKey = GlobalKey<FormState>();
+  final _registerformKey = GlobalKey<FormState>();
 
   var confirmPass;
   @override
@@ -26,7 +26,7 @@ class _RegisterPageState extends State<RegisterPage> {
         body: SingleChildScrollView(
           child: Container(
             child: Form(
-              key: _formKey,
+              key: _registerformKey,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -203,7 +203,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         onPressed: () {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState!.validate()) {
+                          if (_registerformKey.currentState!.validate()) {
                             // String userEmail = email.text;
                             // String userPassword = password.text;
                             Get.offNamed("/login");
