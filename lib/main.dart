@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:task_app/pages/CustomerDashboard.dart';
+import 'package:task_app/pages/CustomerProfile.dart';
 
 import 'pages/LoginPage.dart';
 import 'pages/RegisterPage.dart';
@@ -33,6 +34,10 @@ class _MyAppState extends State<MyApp> {
         GetPage(
             name: '/customerdashboard',
             page: () => CustomerDashboard(),
+            transition: Transition.zoom),
+        GetPage(
+            name: '/customerprofile',
+            page: () => CustomerProfile(),
             transition: Transition.zoom),
       ],
       title: 'Project X',
