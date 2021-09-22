@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(CustomerDashboard());
 
-class MyApp extends StatefulWidget {
+class CustomerDashboard extends StatefulWidget {
   @override
-  _MyAppState createState() => _MyAppState();
+  State<CustomerDashboard> createState() => _CustomerDashboardState();
 }
 
-class NavigationDrawer extends StatelessWidget {
+class _CustomerDashboardState extends State<CustomerDashboard> {
   final padding = EdgeInsets.symmetric(horizontal: 20);
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -87,23 +88,6 @@ class ListViewBuilder extends StatelessWidget {
               },
             );
           }),
-    );
-  }
-}
-
-class _MyAppState extends State<MyApp> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      themeMode: ThemeMode.dark,
-      title: "Dashboard",
-      home: Scaffold(
-          drawer: NavigationDrawer(),
-          appBar: AppBar(
-            backgroundColor: Colors.black,
-            title: Text("Dashboard"),
-          ),
-          body: new ListViewBuilder()),
     );
   }
 }
