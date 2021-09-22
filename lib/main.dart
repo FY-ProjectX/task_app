@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'harsh_gala.dart';
+import 'DeliveryProfilePage.dart';
 
 void main() => runApp(MyApp());
 
