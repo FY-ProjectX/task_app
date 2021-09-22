@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:task_app/OrderPage.dart';
 import 'package:task_app/pages/CustomerDashboard.dart';
 import 'package:task_app/pages/CustomerProfile.dart';
 
 import 'pages/LoginPage.dart';
 import 'pages/RegisterPage.dart';
-
-void main() {
-  runApp(MyApp());
-}
 
 class MyApp extends StatefulWidget {
   // This widget is the root of your application.
@@ -38,6 +35,10 @@ class _MyAppState extends State<MyApp> {
         GetPage(
             name: '/customerprofile',
             page: () => CustomerProfile(),
+            transition: Transition.zoom),
+        GetPage(
+            name: '/orderpage',
+            page: () => OrderPage(),
             transition: Transition.zoom),
       ],
       title: 'Project X',
