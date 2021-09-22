@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:task_app/OrderPage.dart';
 import 'package:task_app/pages/CustomerDashboard.dart';
 import 'package:task_app/pages/CustomerProfile.dart';
+import 'package:task_app/pages/DeliveryProfilePage.dart';
 
 import 'pages/LoginPage.dart';
+import 'pages/OrderPage.dart';
 import 'pages/RegisterPage.dart';
 
 class MyApp extends StatefulWidget {
@@ -39,6 +40,10 @@ class _MyAppState extends State<MyApp> {
         GetPage(
             name: '/orderpage',
             page: () => OrderPage(),
+            transition: Transition.zoom),
+        GetPage(
+            name: '/deliveryprofile',
+            page: () => DeliveryProfilePage(),
             transition: Transition.zoom),
       ],
       title: 'Project X',
