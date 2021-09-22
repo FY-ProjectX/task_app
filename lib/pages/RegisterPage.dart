@@ -6,7 +6,6 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
-  bool _passwordVisible = false;
   // TextEditingController name = TextEditingController();
   // TextEditingController contact = TextEditingController();
   TextEditingController fname = TextEditingController();
@@ -127,9 +126,9 @@ class _RegisterPageState extends State<RegisterPage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (String value) {
+                      validator: (String? value) {
                         confirmPass = value;
-                        if (value.isEmpty) {
+                        if (value!.isEmpty) {
                           return "Please Enter New Password";
                         } else if (value.length < 8) {
                           return "Password must be atleast 8 characters long";
@@ -159,8 +158,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: TextFormField(
-                      validator: (String value) {
-                        if (value.isEmpty) {
+                      validator: (String? value) {
+                        if (value!.isEmpty) {
                           return "Please Re-Enter New Password";
                         } else if (value.length < 8) {
                           return "Password must be atleast 8 characters long";
@@ -203,7 +202,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                         onPressed: () {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState.validate()) {
+                          if (_formKey.currentState!.validate()) {
                             // String userEmail = email.text;
                             // String userPassword = password.text;
                             showDialog(

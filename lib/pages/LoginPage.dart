@@ -133,7 +133,7 @@ class _LoginPageState extends State<LoginPage> {
                         ),
                         onPressed: () {
                           // Validate returns true if the form is valid, or false otherwise.
-                          if (_formKey.currentState.validate()) {
+                          if (_formKey.currentState!.validate()) {
                             // String userEmail = email.text;
                             // String userPassword = password.text;
                             showDialog(
