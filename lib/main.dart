@@ -5,7 +5,7 @@ import 'package:task_app/pages/CustomerProfile.dart';
 import 'package:task_app/pages/DeliveryProfilePage.dart';
 
 import 'pages/LoginPage.dart';
-import 'pages/OrderPage.dart';
+import 'pages/AddOrderPage.dart';
 import 'pages/RegisterPage.dart';
 
 class MyApp extends StatefulWidget {
@@ -38,8 +38,8 @@ class _MyAppState extends State<MyApp> {
             page: () => CustomerProfile(),
             transition: Transition.zoom),
         GetPage(
-            name: '/orderpage',
-            page: () => OrderPage(),
+            name: '/addorderpage',
+            page: () => AddOrderPage(),
             transition: Transition.zoom),
         GetPage(
             name: '/deliveryprofile',
@@ -79,14 +79,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 child: Text('Login'),
                 onPressed: () {
-                  setState(
-                    () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (_context) => LoginPage()),
-                      );
-                    },
-                  );
+                  Get.toNamed('/login');
                 },
                 style: ElevatedButton.styleFrom(
                   // primary: Colors.red,
@@ -106,15 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
               child: ElevatedButton(
                 child: Text('Register'),
                 onPressed: () {
-                  setState(
-                    () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (_context) => RegisterPage()),
-                      );
-                    },
-                  );
+                  Get.toNamed('/register');
                 },
                 style: ElevatedButton.styleFrom(
                   // primary: Colors.red,

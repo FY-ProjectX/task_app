@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class OrderPage extends StatefulWidget {
+class AddOrderPage extends StatefulWidget {
   @override
-  _OrderPageState createState() => _OrderPageState();
+  _AddOrderPageState createState() => _AddOrderPageState();
 }
 
-class _OrderPageState extends State<OrderPage> {
+class _AddOrderPageState extends State<AddOrderPage> {
   String? valuechoose;
 
   List listItem = [

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -136,27 +137,7 @@ class _LoginPageState extends State<LoginPage> {
                           if (_formKey.currentState!.validate()) {
                             // String userEmail = email.text;
                             // String userPassword = password.text;
-                            showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: Text("Success"),
-                                    content: Text(
-                                        "Logged in(this popup just for demo)"),
-                                    actions: <Widget>[
-                                      Center(
-                                        child: new ElevatedButton(
-                                          onPressed: () {
-                                            Navigator.of(context,
-                                                    rootNavigator: true)
-                                                .pop(); // dismisses only the dialog and returns nothing
-                                          },
-                                          child: new Text('Continue'),
-                                        ),
-                                      ),
-                                    ],
-                                  );
-                                });
+                            Get.offNamed('/customerdashboard');
                           }
                         },
                         child: Text('Login'),

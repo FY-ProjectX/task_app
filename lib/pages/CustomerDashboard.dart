@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 void main() => runApp(CustomerDashboard());
 
@@ -20,36 +21,39 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
           children: <Widget>[
             const SizedBox(height: 20),
             buildMenuItem(
-              text: 'Home',
-              icon: Icons.home,
-            ),
+                text: 'Home', icon: Icons.home, next: '/customerdashboard'),
             const SizedBox(height: 20),
             buildMenuItem(
-              text: 'Profile',
-              icon: Icons.people,
-            ),
+                text: 'Profile',
+                icon: Icons.people,
+                next: '/cusomterprofilepage'),
             const SizedBox(height: 20),
             buildMenuItem(
-              text: 'Trip History',
-              icon: Icons.update,
-            ),
+                text: 'Trip History',
+                icon: Icons.update,
+                next: '/customerdashboard'),
             const SizedBox(height: 20),
-            buildMenuItem(text: 'Payment Method', icon: Icons.payment),
+            buildMenuItem(
+                text: 'Payment Method',
+                icon: Icons.payment,
+                next: '/customerdashboard'),
+            const SizedBox(height: 20),
+            buildMenuItem(
+                text: 'Add Order', icon: Icons.payment, next: '/addorderpage'),
             const SizedBox(height: 24),
             Divider(color: Colors.white),
             const SizedBox(height: 24),
             const SizedBox(height: 20),
             buildMenuItem(
-              text: 'About',
-              icon: Icons.help,
-            ),
+                text: 'About', icon: Icons.help, next: '/customerdashboard'),
             const SizedBox(height: 20),
-            buildMenuItem(text: 'Help', icon: Icons.help),
+            buildMenuItem(
+                text: 'Help', icon: Icons.help, next: '/customerdashboard'),
             const SizedBox(height: 48),
             buildMenuItem(
-              text: 'Logout',
-              icon: Icons.logout_outlined,
-            ),
+                text: 'Logout',
+                icon: Icons.logout_outlined,
+                next: '/customerdashboard'),
           ],
         ),
       ),
@@ -59,6 +63,7 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
   Widget buildMenuItem({
     required String text,
     required IconData icon,
+    required String next,
   }) {
     final color = Colors.white;
     final hoverColor = Colors.white24;
@@ -67,7 +72,9 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
       leading: Icon(icon, color: color),
       title: Text(text, style: TextStyle(color: color)),
       hoverColor: hoverColor,
-      onTap: () {},
+      onTap: () {
+        Get.toNamed(next);
+      },
     );
   }
 }
