@@ -8,10 +8,10 @@ class FormScreen extends StatefulWidget {
 }
 
 class FormScreenState extends State<FormScreen> {
-  String _name;
-  String _email;
-  String _password;
-  String _phoneNumber;
+  String? _name;
+  String? _email;
+  String? _password;
+  String? _phoneNumber;
 
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
 
@@ -22,14 +22,14 @@ class FormScreenState extends State<FormScreen> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
       maxLength: 20,
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Name is Required';
         }
 
         return null;
       },
-      onSaved: (String value) {
+      onSaved: (String? value) {
         _name = value;
       },
     );
@@ -41,8 +41,8 @@ class FormScreenState extends State<FormScreen> {
           labelText: 'Email',
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Email is Required';
         }
 
@@ -54,7 +54,7 @@ class FormScreenState extends State<FormScreen> {
 
         return null;
       },
-      onSaved: (String value) {
+      onSaved: (String? value) {
         _email = value;
       },
     );
@@ -67,14 +67,14 @@ class FormScreenState extends State<FormScreen> {
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(20.0)),
       ),
       keyboardType: TextInputType.visiblePassword,
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Password is Required';
         }
 
         return null;
       },
-      onSaved: (String value) {
+      onSaved: (String? value) {
         _password = value;
       },
     );
@@ -87,8 +87,8 @@ class FormScreenState extends State<FormScreen> {
           border:
               OutlineInputBorder(borderRadius: BorderRadius.circular(20.0))),
       keyboardType: TextInputType.phone,
-      validator: (String value) {
-        if (value.isEmpty) {
+      validator: (String? value) {
+        if (value!.isEmpty) {
           return 'Phone number is Required';
         }
 
@@ -143,11 +143,11 @@ class FormScreenState extends State<FormScreen> {
                       textStyle:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                   onPressed: () {
-                    if (!_formKey.currentState.validate()) {
+                    if (!_formKey.currentState!.validate()) {
                       return;
                     }
 
-                    _formKey.currentState.save();
+                    _formKey.currentState!.save();
 
                     print(_name);
                     print(_email);
