@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class DeliveryProfilePage extends StatefulWidget {
   DeliveryProfilePage({Key? key}) : super(key: key);
@@ -9,6 +12,22 @@ class DeliveryProfilePage extends StatefulWidget {
 
 class _DeliveryProfilePageState extends State<DeliveryProfilePage> {
   TextStyle style = TextStyle(fontFamily: 'Montserrat', fontSize: 20.0);
+  List _orders = [];
+
+  @override
+  void initState() {
+    super.initState();
+    readJson();
+  }
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/orders.json');
+    final data = await json.decode(response);
+    setState(() {
+      _orders = data["orders"];
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -103,6 +122,25 @@ class _DeliveryProfilePageState extends State<DeliveryProfilePage> {
                 mobileField,
                 SizedBox(
                   height: 35.0,
+                ),
+                ListView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  itemCount: _orders.length,
+                  itemBuilder: (context, index) {
+                    return ListTile(
+                        hoverColor: Colors.blue,
+                        onTap: () {
+                          print("Clicked");
+                        },
+                        leading: Icon(Icons.add_box),
+                        trailing: Text(
+                          "${_orders[index]['date']}",
+                          style: TextStyle(color: Colors.green, fontSize: 15),
+                        ),
+                        title: Text(
+                            " Order Id: ${_orders[index]['id']} Cost: ${_orders[index]['cost']}"));
+                  },
                 ),
                 nextpageButon,
                 SizedBox(

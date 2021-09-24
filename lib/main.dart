@@ -114,6 +114,26 @@ class _MyHomePageState extends State<MyHomePage> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              height: 40,
+              width: MediaQuery.of(context).size.width * 0.3,
+              child: ElevatedButton(
+                child: Text('Delivery Profile'),
+                onPressed: () {
+                  Get.toNamed('/deliveryprofile');
+                },
+                style: ElevatedButton.styleFrom(
+                  // primary: Colors.red,
+                  // onPrimary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(32.0),
+                  ),
+                ),
+              ),
+            )
           ],
         ),
       ),
