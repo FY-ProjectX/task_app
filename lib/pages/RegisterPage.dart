@@ -19,7 +19,9 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color(0xff34a3a3),
         appBar: AppBar(
+          backgroundColor: Color(0xffa3d1d0),
           title: Text('Register'),
         ),
         body: SingleChildScrollView(
@@ -47,15 +49,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           labelText: ' First Name',
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -70,15 +72,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           labelText: ' Last Name',
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -93,15 +95,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           labelText: 'Email Id ',
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -139,15 +141,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           labelText: 'Password',
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -172,15 +174,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.black),
+                            borderSide: BorderSide(color: Colors.white),
                           ),
                           labelText: 'Re-enter Password',
                           labelStyle: TextStyle(
-                            color: Colors.black,
+                            color: Colors.white,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.black,
+                            color: Colors.white,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -190,11 +192,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
                   Center(
                     child: Container(
-                      height: 40,
+                      height: 60,
                       width: MediaQuery.of(context).size.width * 0.2,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          // primary: Colors.red,
+                          primary: Color(0xffa3d1d0),
                           // onPrimary: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32.0),
