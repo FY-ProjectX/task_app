@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class FormScreen extends StatefulWidget {
+class CustomerProfile extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    return FormScreenState();
+    return CustomerProfileState();
   }
 }
 
-class FormScreenState extends State<FormScreen> {
+class CustomerProfileState extends State<CustomerProfile> {
   String? _name;
   String? _email;
   String? _password;
