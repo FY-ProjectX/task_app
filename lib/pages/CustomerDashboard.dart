@@ -96,6 +96,12 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
+  @override
+  void initState() {
+    super.initState();
+    readJson();
+  }
+
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
@@ -103,14 +109,6 @@ class _HomePageState extends State<HomePage> {
         padding: const EdgeInsets.all(25),
         child: Column(
           children: [
-            ElevatedButton(
-              child: Text('Load Data'),
-              onPressed: readJson,
-              style: ElevatedButton.styleFrom(
-                primary: Color.fromRGBO(52, 163, 163, 1.0),
-              ),
-            ),
-
             // Display the data loaded from sample.json
             _items.length > 0
                 ? Expanded(
