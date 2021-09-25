@@ -1,0 +1,19 @@
+{
+    "orders": [
+      {
+        "id": "Order no. 1",
+        "date": "Date: 19/02/2021",
+        "cost": "Cost: 100"
+      },
+      {
+        "id": "Order no. 2",
+        "date": "Date: 19/02/2021",
+        "cost": "Cost: 200"
+      },
+      {
+        "id": "Order no. 3",
+        "date": "Date: 19/02/2021",
+        "cost": "Cost: 300"
+      }
+    ]
+  }
