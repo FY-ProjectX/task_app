@@ -87,8 +87,9 @@ class _MyHomePageState extends State<MyHomePage> {
                   Get.toNamed('/login');
                 },
                 style: ElevatedButton.styleFrom(
-                  // primary: Colors.red,
+                  primary: Theme.of(context).primaryColor,
                   // onPrimary: Colors.white,
+
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(32.0),
                   ),
@@ -107,7 +108,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Get.toNamed('/register');
                 },
                 style: ElevatedButton.styleFrom(
-                  // primary: Colors.red,
+                  primary: Theme.of(context).primaryColor,
                   // onPrimary: Colors.white,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(32.0),

@@ -21,18 +21,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        icon: Icon(Icons.location_city_rounded, color: Colors.green),
+        icon: Icon(
+          Icons.location_city_rounded,
+          color: Colors.white,
+        ),
         hintText: 'Address',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -42,18 +46,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        icon: Icon(Icons.phone, color: Colors.green),
+        icon: Icon(
+          Icons.phone,
+          color: Colors.white,
+        ),
         hintText: 'Phone number',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -63,18 +71,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        icon: Icon(Icons.local_post_office_rounded),
+        icon: Icon(
+          Icons.local_post_office_rounded,
+          color: Colors.white,
+        ),
         hintText: 'Note: appartment,office, etc.',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -84,18 +96,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        icon: Icon(Icons.location_city_rounded),
-        hintText: 'Address',
+        icon: Icon(
+          Icons.location_city_rounded,
+          color: Colors.white,
+        ),
+        hintText: ('Address'),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -105,18 +121,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.number,
       decoration: InputDecoration(
-        icon: Icon(Icons.phone),
+        icon: Icon(
+          Icons.phone,
+          color: Colors.white,
+        ),
         hintText: 'Phone number',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -126,18 +146,22 @@ class _AddOrderPageState extends State<AddOrderPage> {
     return TextField(
       keyboardType: TextInputType.text,
       decoration: InputDecoration(
-        icon: Icon(Icons.local_post_office_rounded),
+        icon: Icon(
+          Icons.local_post_office_rounded,
+          color: Colors.white,
+        ),
         hintText: 'Note: appartment,office, etc.',
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(35),
         ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
+        enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+          color: Colors.white,
+          width: 1.0,
+        )),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25.0),
+          borderSide: BorderSide(color: Colors.white),
         ),
       ),
     );
@@ -145,39 +169,47 @@ class _AddOrderPageState extends State<AddOrderPage> {
 
   Widget _weight() {
     return TextField(
-      keyboardType: TextInputType.text,
-      decoration: InputDecoration(
-        icon: Icon(Icons.local_post_office_rounded),
-        hintText: 'weight of the package',
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(35),
-        ),
-        enabledBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(35.0),
-          borderSide: BorderSide(color: Colors.grey),
-        ),
-        focusedBorder: new OutlineInputBorder(
-          borderRadius: new BorderRadius.circular(235.0),
-          borderSide: BorderSide(color: Colors.green),
-        ),
-      ),
-    );
+        keyboardType: TextInputType.text,
+        decoration: InputDecoration(
+          icon: Icon(
+            Icons.local_post_office_rounded,
+            color: Colors.white,
+          ),
+          hintText: 'weight of the package',
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(35),
+          ),
+          enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(
+            color: Colors.white,
+            width: 1.0,
+          )),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(25.0),
+            borderSide: BorderSide(
+              color: Colors.white,
+            ),
+          ),
+        ));
   }
 
   bool? checkboxvalue = false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
           title: Text('Order Page'),
         ),
         body: ListView(
           padding: EdgeInsets.all(8),
           children: [
             ListTile(
-              title: Text('A)  FROM'),
+              title: Text(
+                'A)  FROM',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             Padding(
               padding: EdgeInsets.all(10),
@@ -192,7 +224,10 @@ class _AddOrderPageState extends State<AddOrderPage> {
               child: _buildtype(),
             ),
             ListTile(
-              title: Text('B)  TO'),
+              title: Text(
+                'B)  TO',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
             Padding(
               padding: const EdgeInsets.all(8.0),
@@ -229,7 +264,7 @@ class _AddOrderPageState extends State<AddOrderPage> {
                 hint: Text(
                   "Type of package",
                   style: TextStyle(
-                      color: Colors.black,
+                      color: Colors.white,
                       fontSize: 16,
                       fontWeight: FontWeight.w600),
                 ),
@@ -248,7 +283,10 @@ class _AddOrderPageState extends State<AddOrderPage> {
                       });
                     },
                   ),
-                  Text("I accept the terms and condition")
+                  Text(
+                    "I accept the terms and condition",
+                    style: TextStyle(color: Colors.white),
+                  )
                 ],
               ),
             )

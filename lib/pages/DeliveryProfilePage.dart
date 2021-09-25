@@ -94,63 +94,68 @@ class _DeliveryProfilePageState extends State<DeliveryProfilePage> {
     );
 
     return Scaffold(
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
+          title: Text('Delivery Guy Dashboard'),
+        ),
         body: SingleChildScrollView(
-      child: Center(
-        child: Container(
-          color: Colors.white,
-          child: Padding(
-            padding: const EdgeInsets.all(36.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: 45.0),
-                nameField,
-                SizedBox(height: 25.0),
-                bankdetailsField,
-                SizedBox(
-                  height: 35.0,
+          child: Center(
+            child: Container(
+              color: Colors.white,
+              child: Padding(
+                padding: const EdgeInsets.all(36.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    SizedBox(height: 45.0),
+                    nameField,
+                    SizedBox(height: 25.0),
+                    bankdetailsField,
+                    SizedBox(
+                      height: 35.0,
+                    ),
+                    regionField,
+                    SizedBox(
+                      height: 35.0,
+                    ),
+                    proofofaddressField,
+                    SizedBox(
+                      height: 35.0,
+                    ),
+                    mobileField,
+                    SizedBox(
+                      height: 35.0,
+                    ),
+                    ListView.builder(
+                      physics: NeverScrollableScrollPhysics(),
+                      shrinkWrap: true,
+                      itemCount: _orders.length,
+                      itemBuilder: (context, index) {
+                        return ListTile(
+                            hoverColor: Colors.blue,
+                            onTap: () {
+                              print("Clicked");
+                            },
+                            leading: Icon(Icons.add_box),
+                            trailing: Text(
+                              "${_orders[index]['date']}",
+                              style:
+                                  TextStyle(color: Colors.green, fontSize: 15),
+                            ),
+                            title: Text(
+                                " Order Id: ${_orders[index]['id']} Cost: ${_orders[index]['cost']}"));
+                      },
+                    ),
+                    nextpageButon,
+                    SizedBox(
+                      height: 15.0,
+                    ),
+                  ],
                 ),
-                regionField,
-                SizedBox(
-                  height: 35.0,
-                ),
-                proofofaddressField,
-                SizedBox(
-                  height: 35.0,
-                ),
-                mobileField,
-                SizedBox(
-                  height: 35.0,
-                ),
-                ListView.builder(
-                  physics: NeverScrollableScrollPhysics(),
-                  shrinkWrap: true,
-                  itemCount: _orders.length,
-                  itemBuilder: (context, index) {
-                    return ListTile(
-                        hoverColor: Colors.blue,
-                        onTap: () {
-                          print("Clicked");
-                        },
-                        leading: Icon(Icons.add_box),
-                        trailing: Text(
-                          "${_orders[index]['date']}",
-                          style: TextStyle(color: Colors.green, fontSize: 15),
-                        ),
-                        title: Text(
-                            " Order Id: ${_orders[index]['id']} Cost: ${_orders[index]['cost']}"));
-                  },
-                ),
-                nextpageButon,
-                SizedBox(
-                  height: 15.0,
-                ),
-              ],
+              ),
             ),
           ),
-        ),
-      ),
-    ));
+        ));
   }
 }
