@@ -103,6 +103,7 @@ class CustomerProfileState extends State<CustomerProfile> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+          backgroundColor: Theme.of(context).primaryColor,
           title: Text("Customer's Profile",
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))),
       body: SingleChildScrollView(

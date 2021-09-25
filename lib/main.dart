@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
       ],
       title: 'Project X',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Color.fromRGBO(52, 163, 163, 1.0),
       ),
       home: MyHomePage(title: 'Project X'),
     );
@@ -71,6 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(widget.title),
       ),
       body: Center(

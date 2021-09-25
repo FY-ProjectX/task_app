@@ -19,9 +19,9 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Color(0xff34a3a3),
+        // backgroundColor: Colors.black,
         appBar: AppBar(
-          backgroundColor: Color(0xffa3d1d0),
+          backgroundColor: Theme.of(context).primaryColor,
           title: Text('Register'),
         ),
         body: SingleChildScrollView(
@@ -49,15 +49,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                           labelText: ' First Name',
                           labelStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -72,15 +72,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                           labelText: ' Last Name',
                           labelStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -95,15 +95,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                           labelText: 'Email Id ',
                           labelStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -141,15 +141,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                           labelText: 'Password',
                           labelStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -174,15 +174,15 @@ class _RegisterPageState extends State<RegisterPage> {
                       decoration: InputDecoration(
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(25.0),
-                            borderSide: BorderSide(color: Colors.white),
+                            borderSide: BorderSide(color: Colors.black),
                           ),
                           labelText: 'Re-enter Password',
                           labelStyle: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                           enabledBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                            color: Colors.white,
+                            color: Colors.black,
                             width: 1.0,
                           )),
                           contentPadding: EdgeInsets.all(15),
@@ -197,7 +197,7 @@ class _RegisterPageState extends State<RegisterPage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           primary: Color(0xffa3d1d0),
-                          // onPrimary: Colors.white,
+                          // onPrimary: Colors.black,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(32.0),
                           ),

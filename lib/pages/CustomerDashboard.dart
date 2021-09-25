@@ -1,31 +1,21 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'dart:convert';
 
-void main() => runApp(CustomerDashboard());
+import 'package:flutter/services.dart';
+import 'package:get/get.dart';
 
 class CustomerDashboard extends StatefulWidget {
   @override
-  State<CustomerDashboard> createState() => _CustomerDashboardState();
+  _CustomerDashboardState createState() => _CustomerDashboardState();
 }
 
-class _CustomerDashboardState extends State<CustomerDashboard> {
+class NavigationDrawer extends StatelessWidget {
   final padding = EdgeInsets.symmetric(horizontal: 20);
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        drawer: appdrawer(),
-        appBar: AppBar(
-          backgroundColor: Colors.black,
-          title: Text("Dashboard"),
-        ),
-        body: new ListViewBuilder());
-  }
-
-  Widget appdrawer() {
     return Drawer(
       child: Material(
-        color: Colors.black,
+        color: Color.fromRGBO(52, 163, 163, 1.0),
         child: ListView(
           padding: padding,
           children: <Widget>[
@@ -89,6 +79,63 @@ class _CustomerDashboardState extends State<CustomerDashboard> {
   }
 }
 
+class HomePage extends StatefulWidget {
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  List _items = [];
+
+  // Fetch content from the json file
+  Future<void> readJson() async {
+    final String response = await rootBundle.loadString('assets/orders.json');
+    final data = await json.decode(response);
+    setState(() {
+      _items = data["orders"];
+    });
+  }
+
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
+      body: Padding(
+        padding: const EdgeInsets.all(25),
+        child: Column(
+          children: [
+            ElevatedButton(
+              child: Text('Load Data'),
+              onPressed: readJson,
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromRGBO(52, 163, 163, 1.0),
+              ),
+            ),
+
+            // Display the data loaded from sample.json
+            _items.length > 0
+                ? Expanded(
+                    child: ListView.builder(
+                      itemCount: _items.length,
+                      itemBuilder: (context, index) {
+                        return Card(
+                          margin: EdgeInsets.all(10),
+                          child: ListTile(
+                            leading: Text(_items[index]["id"]),
+                            title: Text(_items[index]["date"]),
+                            subtitle: Text(_items[index]["cost"]),
+                          ),
+                        );
+                      },
+                    ),
+                  )
+                : Container()
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class ListViewBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -99,12 +146,30 @@ class ListViewBuilder extends StatelessWidget {
             return ListTile(
               leading: Icon(Icons.receipt),
               title: Text("Order $index"),
-              hoverColor: Colors.blue,
+              hoverColor: Colors.white24,
               onTap: () {
                 print("Hii");
               },
             );
           }),
+    );
+  }
+}
+
+class _CustomerDashboardState extends State<CustomerDashboard> {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Dashboard",
+      home: Scaffold(
+        backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
+        drawer: NavigationDrawer(),
+        appBar: AppBar(
+          backgroundColor: Color.fromRGBO(52, 163, 163, 1.0),
+          title: Text("Dashboard"),
+        ),
+        body: HomePage(),
+      ),
     );
   }
 }
